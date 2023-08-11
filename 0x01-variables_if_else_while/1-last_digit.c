@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
 /**
@@ -12,20 +13,11 @@ int main(void)
 	int lastdigit = n % 10;
 
 	if (lastdigit > 5)
-	{
 		printf("and is greater than 5\n");
-	}
 	if (lastdigit == 0)
-	{
-		pintf("and is 0\n");
-	}
+		printf("and is 0\n");
 	if (lastdigit < 6)
 		if (lastdigit != 0)
-		{
 			printf("and is less than 6 and not 0\n");
-		}
-}
-
-
-return (0);
+	return (0);
 }
