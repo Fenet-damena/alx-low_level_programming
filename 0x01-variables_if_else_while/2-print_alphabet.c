@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include <stdio.h>
 #include <time.h>
 /**
  * main - this is the main
@@ -6,12 +6,16 @@
  * Return: 0 at the end
  */
 int main(void)
-{
-	int n;
+{	char c;
 
-	srand(time(0));
-	n = rand() - RAND_MAX / 2;
-	int lastdigit =n%10;
+	c = 'a';
 
+	while
+		(c <= 'z') {
+			putchar(c);
+			c++;
+		}
+	putchar('\n');
 	return (0);
 }
+
