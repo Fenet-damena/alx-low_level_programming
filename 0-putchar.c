@@ -7,9 +7,7 @@
  */
 int main(void)
 {
-	string a = "_putchar";
-
-	printf("%s/n", a);
+	printf("_putchar/n");
 	return (0);
 }
 
