@@ -10,17 +10,21 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int i;
+	unsigned int i = 0;
 
 	if (n == 0 && index < 64)
 		return (0);
 
-	for (i = 0; i <= 63; n >>= 1, i++)
+	while (i <= 63)
 	{
-		if (index == i)
+		switch (index)
 		{
-			return (n & 1);
+			case i:
+				return (n & 1);
 		}
+
+		n >>= 1;
+		i++;
 	}
 
 	return (-1);
