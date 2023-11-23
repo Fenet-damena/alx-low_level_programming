@@ -20,7 +20,10 @@ unsigned int binary_to_uint(const char *b)
 	for (len = 0; b[len] != '\0'; len++)
 		;
 
-	for (len--, base_two = 1; len >= 0; len--, base_two *= 2)
+	len--;
+
+	base_two = 1;
+	while (len >= 0)
 	{
 		if (b[len] != '0' && b[len] != '1')
 		{
@@ -31,8 +34,10 @@ unsigned int binary_to_uint(const char *b)
 		{
 			ui += base_two;
 		}
+
+		base_two *= 2;
+		len--;
 	}
 
 	return (ui);
 }
-
