@@ -2,11 +2,11 @@
 #include <stdio.h>
 
 /**
- * error_file - checks if files can be open
- * @file_from: file_from
- * @file_to: file_to
- * @argv: arguments vector
- * Return: no return
+ * error_file - the function checks if files can be open
+ * @file_from: file
+ * @file_to: file to
+ * @argv: the arguments vector
+ * Return: doesnt return any
  */
 void error_file(int file_from, int file_to, char *argv[])
 {
@@ -23,14 +23,14 @@ void error_file(int file_from, int file_to, char *argv[])
 }
 
 /**
- * main - check the code
- * @argc: number of arguments
- * @argv: arguments vector
- * Return: Always 0
+ * main - the function check the code
+ * @argc: the number of arguments
+ * @argv: the arguments vector
+ * Return: 0
  */
 int main(int argc, char *argv[])
 {
-	int file_from, file_to, err_close;
+	int file_from, file_to, ec;
 	ssize_t nchars, nwr;
 	char buf[1024];
 
@@ -55,15 +55,15 @@ int main(int argc, char *argv[])
 			error_file(0, -1, argv);
 	}
 
-	err_close = close(file_from);
-	if (err_close == -1)
+	ec = close(file_from);
+	if (ec == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
 		exit(100);
 	}
 
-	err_close = close(file_to);
-	if (err_close == -1)
+	ec = close(file_to);
+	if (ec == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
 		exit(100);
